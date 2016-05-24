@@ -120,6 +120,7 @@ const propTypes = {
   leftButtonIconStyle: Image.propTypes.style,
   getTitle: PropTypes.func,
   titleStyle: Text.propTypes.style,
+  titleNumberOfLines: PropTypes.number,
   position: PropTypes.object,
   navigationBarStyle: View.propTypes.style,
   renderTitle: PropTypes.any,
@@ -324,9 +325,12 @@ class NavBar extends React.Component {
 
   renderTitle(childState, index:number) {
     const title = this.props.getTitle ? this.props.getTitle(childState) : childState.title;
+    const numberOfLines = this.props.titleNumberOfLines || -1;
+
     return (
       <Animated.Text
         key={childState.key}
+        numberOfLines={numberOfLines}
         style={[
           styles.title,
           this.props.titleStyle,
