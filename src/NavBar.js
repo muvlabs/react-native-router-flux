@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#EFEFF2',
     paddingTop: 0,
     top: 0,
-    height: Platform.OS === 'ios' || Platform.Version > 19 ? 64 : 44,
+    height: Platform.OS === 'ios' || (Platform.Version > 19 && Platform.Version < 23) ? 64 : 44,
     right: 0,
     left: 0,
     borderBottomWidth: Platform.OS === 'android' ? 0 : 0.5,
