@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     height: Platform.OS === 'ios' || Platform.Version > 19 ? 64 : 44,
     right: 0,
     left: 0,
-    borderBottomWidth: 0.5,
+    borderBottomWidth: Platform.OS === 'android' ? 0 : 0.5,
     borderBottomColor: '#828287',
     position: 'absolute',
   },
